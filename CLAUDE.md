@@ -1,8 +1,8 @@
 # CLAUDE.md
 
-> **Alcance / Scope** — Este archivo está pensado como memoria **global**: cópialo a
+> **Alcance / Scope** — Este archivo está pensado como memoria **global**: instálalo en
 > `~/.claude/CLAUDE.md` para que aplique a todos tus proyectos.
-> `cp CLAUDE.md ~/.claude/CLAUDE.md`
+> `./install.sh` (enlace simbólico, se actualiza con `git pull`) o `./install.sh --copy`.
 > Vive aquí versionado porque este repo es la base de proyectos futuros; al estar en la
 > raíz también actúa como memoria de este repo.
 >

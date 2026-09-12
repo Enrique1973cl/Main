@@ -13,6 +13,7 @@ cada proyecto nuevo.
 |---|---|
 | [`CLAUDE.md`](CLAUDE.md) | Memoria del agente: estilo de respuesta, flujo de git, workflow de Superpowers y reglas de seguridad. Bilingüe (instrucciones en inglés, notas en español). |
 | [`.claude/settings.json`](.claude/settings.json) | Declara el marketplace `obra/superpowers-marketplace` y activa el plugin `superpowers` con ámbito de proyecto. |
+| [`install.sh`](install.sh) | Instala `CLAUDE.md` como memoria global de Claude Code (`~/.claude/CLAUDE.md`). |
 
 ## Uso
 
@@ -26,16 +27,31 @@ cd Main
 Al abrir Claude Code en este directorio, el plugin `superpowers` se activa solo: está
 declarado en `.claude/settings.json` y se descarga en el primer arranque.
 
-### 2. Aplicar las reglas a todos tus proyectos (opcional)
+### 2. Aplicar las reglas a todos tus proyectos
 
-`CLAUDE.md` está escrito para servir como memoria global. Cópialo una vez y aplicará
-fuera de este repo también:
+`CLAUDE.md` está escrito para servir como memoria **global**. Instálalo una vez por máquina
+y aplicará a todos tus proyectos, no solo a este:
 
 ```bash
-cp CLAUDE.md ~/.claude/CLAUDE.md
+./install.sh              # enlace simbólico: se actualiza solo con git pull
+./install.sh --copy       # copia independiente del repo
+./install.sh --dry-run    # muestra qué haría, sin tocar nada
 ```
 
+El script instala en `$CLAUDE_CONFIG_DIR/CLAUDE.md` (o `~/.claude/CLAUDE.md`), respalda
+cualquier archivo previo en `CLAUDE.md.bak.<fecha>` y es idempotente: ejecutarlo dos veces
+no hace daño. Reinicia Claude Code y comprueba con `/memory`.
+
 El `CLAUDE.md` propio de cada proyecto tiene prioridad sobre el global cuando hay conflicto.
+
+> **Claude Code en la web** — cada sesión arranca en un contenedor nuevo, así que el
+> `~/.claude/CLAUDE.md` de tu máquina no viaja. Para que aplique también ahí, añade esto al
+> *setup script* del entorno en claude.ai/code:
+>
+> ```bash
+> git clone --depth 1 https://github.com/Enrique1973cl/Main.git /tmp/main-config \
+>   && /tmp/main-config/install.sh --copy
+> ```
 
 ### 3. Arrancar un proyecto nuevo desde aquí
 
