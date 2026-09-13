@@ -1,0 +1,42 @@
+# CLAUDE.md — {{PROJECT}}
+
+> Instrucciones específicas de este proyecto. **Ganan** sobre el `CLAUDE.md`
+> global (`~/.claude/CLAUDE.md`) cuando hay conflicto.
+> Objetivo de tamaño: por debajo de 200 líneas.
+>
+> Lo que valga para todos tus proyectos no va aquí: va al global.
+
+@.claude/memory/MEMORY.md
+
+---
+
+## Stack y comandos
+
+<!-- Rellena esto primero: es lo que más se usa y lo que el modelo no puede adivinar. -->
+
+- **Stack:**
+- **Gestor de paquetes:**
+
+| Tarea | Comando |
+|---|---|
+| build | |
+| test | |
+| lint | |
+| typecheck | |
+
+## Cómo se ejecuta en local
+
+<!-- Pasos exactos, y las variables de entorno requeridas: SÓLO NOMBRES, nunca valores. -->
+
+## Arquitectura
+
+<!-- Layout de directorios y las convenciones no obvias. Lo que se deduce leyendo
+     el código, no hace falta escribirlo. -->
+
+## Convenciones propias
+
+<!-- Reglas de este repo que se desvían de lo habitual, y el porqué. -->
+
+## Excepciones al CLAUDE.md global
+
+<!-- Si alguna regla global no aplica aquí, dilo explícitamente. -->

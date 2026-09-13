@@ -1,0 +1,38 @@
+# MEMORY.md — {{PROJECT}}
+
+> Memoria de **este** proyecto. La importa `CLAUDE.md` con
+> `@.claude/memory/MEMORY.md`, así que entra en contexto en cada sesión abierta
+> aquí. Mantenlo corto: **una línea por entrada**, máximo ~200 líneas.
+> El detalle va en `topics/`, que se lee bajo demanda.
+
+<!-- Formato: `- [YYYY-MM-DD] Hecho en una línea. → topics/archivo.md` -->
+<!-- Regla: si una entrada no cambiaría una decisión futura, no la escribas. -->
+
+---
+
+## Estado actual
+
+<!-- En qué está el proyecto ahora mismo. Una o dos líneas. Se reescribe, no se acumula. -->
+
+- [{{DATE}}] Proyecto dado de alta desde la plantilla de `Main`.
+
+## Decisiones
+
+<!-- Las que costaría volver a razonar. Con fecha. -->
+
+## Contexto que no está en el código
+
+<!-- Plazos, dependencias externas, por qué algo es así, dónde vive el tracker. -->
+
+## Trampas conocidas
+
+<!-- Lo que ya salió mal una vez. Esto es lo que más valor tiene aquí. -->
+
+---
+
+## Mantenimiento
+
+1. Escribe una entrada cuando el hecho **cambiaría una decisión futura**.
+2. Lo que se deduce leyendo el código, no se escribe.
+3. Entrada obsoleta: se borra o se reescribe. No se acumula historia.
+4. `wc -l` por debajo de 200.
