@@ -3,11 +3,37 @@
 > **Alcance / Scope** — Este archivo está pensado como memoria **global**: instálalo en
 > `~/.claude/CLAUDE.md` para que aplique a todos tus proyectos.
 > `./install.sh` (enlace simbólico, se actualiza con `git pull`) o `./install.sh --copy`.
-> Vive aquí versionado porque este repo es la base de proyectos futuros; al estar en la
-> raíz también actúa como memoria de este repo.
+> El script instala también `memory/` en `~/.claude/memory/`, que es lo que importa la
+> sección *Memory* de más abajo.
+> Vive aquí versionado porque este repo es la base de proyectos futuros.
+>
+> Lo específico del repo `Main` **no** va aquí: va en `projects/main/CLAUDE.md`. La
+> pregunta de control al editar este archivo es *¿esto vale para cualquier proyecto?*
 >
 > **Idioma / Language** — Las instrucciones van en inglés (es lo que el modelo sigue con
 > menos ambigüedad). Las notas para ti, en español, van citadas como esta.
+
+---
+
+## Memory
+
+@~/.claude/memory/MEMORY.md
+
+- The index imported above loads in **every** session. Keep it to one line per entry and
+  under 200 lines; detail belongs in `~/.claude/memory/topics/*.md`, read on demand.
+- Per-project memory is **not** in there. It lives in that project's own repo at
+  `.claude/memory/MEMORY.md` and is imported by that project's `CLAUDE.md`.
+- **Write an entry only when the fact would change a future decision.** Anything you can
+  derive by reading the code does not belong in memory.
+- Update memory as part of finishing a piece of work: a decision taken, a trap hit, a
+  correction I gave you. Rewrite or delete stale entries — do not stack new ones on top.
+- Never write secrets, tokens, credentials or my email address into a memory file. These
+  files are committed to git.
+
+> Nota: el índice y sus temas viven versionados en el repo `Main` (`memory/`) y se
+> instalan con `./install.sh`. Si la importación de arriba aparece vacía, es que
+> `~/.claude/memory/` todavía no está instalado en esta máquina. Un proyecto nuevo se da
+> de alta con `./scripts/new-project.sh <ruta-al-repo>`.
 
 ---
 
